@@ -1,6 +1,6 @@
 ![](UTA-DataScience-Logo.png)
 
-# California Wildfire Forecasting: Tabular Project Repo for DATA4380 SU25
+# California Wildfire Forecasting
 
 * **One Sentence Summary** Ex: This repository holds an attempt to apply LSTMs to Stock Market using data from
 "Get Rich" Kaggle challenge (provide link). 
