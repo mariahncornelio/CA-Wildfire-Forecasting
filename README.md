@@ -13,8 +13,6 @@
 
 ## Summary of Work Done
 
-Include only the sections that are relevant an appropriate.
-
 ### Data
 
   * **Type:**
@@ -46,7 +44,17 @@ Include only the sections that are relevant an appropriate.
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+<img width="691" alt="Screenshot 2025-07-01 at 6 35 27 PM" src="https://github.com/user-attachments/assets/fab01205-f919-4985-ac5e-608b928f0d46" />
+
+EDA revealed several patterns associated with wildfire occurrences. Fires can start ***regardless of rainfall***, though they are ***more common when there is no precipitation*** or lagged precipitation, indicating dry conditions. ***Higher maximum and minimum temperatures***, especially above 55°F, and ***wider temperature ranges*** tend to correlate with fire starts. Wind plays a crucial role, as ***fires often occur on windier days***, both in real-time and lagged measures. A clear upward trend in fire frequency was observed over the years. Seasonality also emerged, with most fires ***occurring between June and August***, aligning with ***dry summer periods***. Additionally, interactions between wind and heat, reflected in the wind–temperature ratio, suggest ***vegetation dryness increases fire risk***.
+
+<img width="547" alt="Screenshot 2025-07-01 at 6 38 59 PM" src="https://github.com/user-attachments/assets/a1354527-0fc2-4dd0-8c12-1a1102eeba7d" />
+
+Finally, the dataset shows a ***moderate class imbalance***, with approximately 66% of samples labeled as no fire and 33% as fire, which was considered during model training.
+
+![download](https://github.com/user-attachments/assets/2b072b8a-c4eb-4b74-94f0-6f25c0da780b)
+
+The plot above shows feature trends during the 21 days leading up to a fire event on April 30, 2011. An important trend observed is that ***1–2 weeks before a fire starts, temperatures tend to drop while wind speeds increase***. This pattern likely reflects the ***arrival of colder, drier air, which can dry out vegetation*** and create conditions more favorable for wildfires.
 
 ### Problem Formulation
 
