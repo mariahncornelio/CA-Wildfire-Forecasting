@@ -17,16 +17,32 @@ Include only the sections that are relevant an appropriate.
 
 ### Data
 
-* Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+  * **Type:**
+    * Input: Daily weather and temporal features in a CSV file (precipitation, temperature, wind speed, etc.)
+    * Output: Binary flag indicating wildfire ignition on a given day (FIRE_START_DAY)
+  * **Size:**
+    * 14,988 rows of daily records from 1984-2025, 14 features
+  * **Instances:** After creating 21-day window, 10476 training samples, 2245 validation, and 2246 test samples. 70-15-15 split, respectively
 
 #### Preprocessing / Clean up
 
-* Describe any manipulations you performed to the data.
+* **Missing Values:**
+  * PRECIPITATION values were imputed with 0 (reflecting realistic dry periods)
+  * Normally distributed features (MAX_TEMP, MIN_TEMP, AVG_WIND_SPEED, WIND_TEMP_RATIO) were imputed with the mean
+  * Right-skewed TEMP_RANGE was imputed using the median
+* **Encoding:**
+  * The target column FIRE_START_DAY was encoded as a binary integer
+  * SEASON and DAY_OF_YEAR were encoded using cyclical features (sin/cos) to preserve periodicity
+* **Datetime and Sorting:**
+  * Dates were parsed using pd.to_datetime() and sorted chronologically to maintain sequence order
+* **Feature Selection:**
+  * Redundant or highly collinear features (e.g., WIND_TEMP_RATIO, MONTH, DATE) were dropped based on correlation analysis (threshold was r >= 0.9)
+* **Normalization:**
+  * A MinMaxScaler was applied to all numerical features except for cyclical encodings and the target
+* **Other:**
+  * Duplicate rows were removed
+  * A sliding window function was implemented to generate 21-day sequences for time series models
+  * Outliers were kept to preserve real-world variability in wildfire patterns
 
 #### Data Visualization
 
