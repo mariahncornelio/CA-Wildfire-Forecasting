@@ -143,9 +143,30 @@ The list below follows the chronological order in which each component of the pr
 * **Prototype_Tabular_MNC.ipynb:** Using firedf_cleaned.csv, this notebook trains the chosen models, chooses the best time series model, and includes the built wildfire forecasting tool prototype at the very end
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
+
+This project was developed and executed entirely in Jupyter Notebook. If you don’t already have it installed, you can download it as part of the Anaconda distribution or install it via pip "pip install notebook".
+
+* **Data Handling & Visualization:**
+  * pandas, numpy, matplotlib, seaborn
+* **Preprocessing & Evaluation:**
+  * sklearn.preprocessing:
+    * MinMaxScaler, StandardScaler, OrdinalEncoder
+  * sklearn.model_selection:
+    * train_test_split
+  * sklearn.metrics:
+    * recall_score, precision_score, f1_score, roc_auc_score, roc_curve, classification_report, confusion_matrix
+  * sklearn.utils:
+    * class_weight
+* **Machine Learning Models:**
+  * sklearn.linear_model.LogisticRegression
+  * sklearn.tree.DecisionTreeClassifier
+  * sklearn.ensemble.RandomForestClassifier
+* **Deep Learning (TensorFlow/Keras):**
+  * tensorflow
+    * Sequential, Model, Dense, Dropout, LSTM, GRU, Bidirectional, Conv1D, MaxPooling1D, EarlyStopping, Recall, AUC
+    * MultiHeadAttention, LayerNormalization, GlobalAveragePooling1D (used for transformer model)
+* **Gradient Boosting:**
+  * xgboost
 
 ### Data
 
