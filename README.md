@@ -170,17 +170,36 @@ This project was developed and executed entirely in Jupyter Notebook. If you don
 
 ### Data
 
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
+* **DATA DOWNLOAD LINK:** https://zenodo.org/records/14712845
+* **All preprocessing and cleanup steps are documented and executed in the Feasibility_Tabular_MNC.ipynb notebook.** This includes:
+  * Handling missing values based on distribution (mean, median, or zeros)
+  * Cyclical encoding of seasonal and temporal features
+  * Dropping redundant or highly correlated columns
+  * Scaling features using MinMax normalization
+  * Encoding the target variable
+  * Sequence generation using a 21-day rolling window for time series modeling (in the Prototype_Tabular_MNC.ipynb notebook)
 
 ### Training
 
-* Describe how to train the model
+* Install required packages in notebook
+* Download and prepare the data from Zenodo and the Feasibility_Tabular_MNC.ipynb pipeline, obtaining firedf_cleaned.csv
+* Train models in this order: LSTM, GRU, BiLSTM, Stacked LSTM, CNN + LSTM, Transformer, Decision Tree, XGBoost
+  * All models use Binary Crossentropy loss, Adam optimizer, and EarlyStopping callback with patience of 3 and val_loss monitoring
+ * After training the base model, tune thresholds to balance Recall and F1 on the **validation set**
+* Use the obtained threshold value on the **test set**
+
+***For reference, see Prototype_Tabular_MNC.ipynb***
 
 #### Performance Evaluation
 
-* Describe how to run the performance evaluation.
+* For each model:
+  * Calculate key classification metrics: precision, recall, F1-score, ROC-AUC
+  * Print classification report on validation set pre-tuned
+  * Print classification report on validation set post-tuned
+  * Print classification report on test set post-tuned
+  * Plot ROC curves and compare models visually
 
+***For reference, see Prototype_Tabular_MNC.ipynb***
 
 ## CITATIONS
 
