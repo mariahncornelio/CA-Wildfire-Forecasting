@@ -92,9 +92,17 @@ Each model took **between 10 seconds to 1 minute to train** with Transformer tak
 
 ### Performance Comparison
 
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+The primary goal of this project is to accurately detect wildfire start days, where failing to identify a true fire (false negative) can have dangerous, even deadly consequences. For this reason, we prioritized ***Recall & ROC-AUC > F1 > Precision***:
+* **Recall:** Catching as many actual fire events as possible is crucial to minimize missed alarms
+* **F1:** Balances recall and precision, helping prevent over-alerting while still catching fires
+* **Precision:** Excessive false positives can damage trust in the system and strain emergency resources
+* **ROC-AUC:** Measures the model’s ability to distinguish between fire and non-fire days, regardless of threshold
+
+<img width="566" alt="Screenshot 2025-07-01 at 11 45 12 PM" src="https://github.com/user-attachments/assets/2ee6337d-7585-44fd-b61e-3e54f9190dfb" />
+<img width="709" alt="Screenshot 2025-07-01 at 11 35 18 PM" src="https://github.com/user-attachments/assets/31c2d41e-30f8-4711-b0ab-e4173f2e1333" />
+
+While the GRU and Transformer models showed slightly better ROC-AUC and F1 scores, the ***CNN+LSTM architecture achieved the highest recall (0.85)***, which is critical in the context of wildfire forecasting where failing to detect a fire can have severe consequences. For this reason, ***CNN+LSTM was selected as the final model for the forecasting tool.*** Note that although XGBoost performed the best along with the Decision Tree model, the main goal was to choose the best **time-series** model. Those were just for comparison and curiosity.
+
 
 ### Conclusions
 
