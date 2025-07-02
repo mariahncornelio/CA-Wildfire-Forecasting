@@ -1,4 +1,4 @@
-![](UTA-DataScience-Logo.png)
+![UTA-DataScience-Logo](https://github.com/user-attachments/assets/36b0607e-06da-485c-97a1-34a4f0552141)
 
 # California Wildfire Forecasting
 
@@ -132,20 +132,15 @@ Overall, incorporating a time-windowed approach significantly improved the model
 
 ### Overview of Files in Repository
 
-* Describe the directory structure, if any.
-* List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
+The list below follows the chronological order in which each component of the project was developed:
 
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+* **Tabular Project Proposal MNC.pptx:** This project's proposal which includes background information and an abstract to the project
+* **Tabular Project Proposal MNC.pdf:** PDF version of the Tabualr Project Proposal MNC.pptx powerpoint
+* **CA_Weather_Fire_Dataset_1984-2025.csv:** Original data set downloaded from Zenodo
+* **ProjectRoughDraft.ipynb:** My notebook before officially working on this project's feasibility and prototype. This was to help me understand my data through varioius in-depth visualizations and to play around with different models and come up with a plan to approach this problem
+* **Feasibility_Tabular_MNC.ipynb:** This notebook includes EDA, visualization, and data pre-processing before running our models
+* **firedf_cleaned.csv:** Output data frame after going through Feasibility_Tabular_MNC.ipynb pipeline 
+* **Prototype_Tabular_MNC.ipynb:** Using firedf_cleaned.csv, this notebook trains the chosen models, chooses the best time series model, and includes the built wildfire forecasting tool prototype at the very end
 
 ### Software Setup
 * List all of the required packages.
