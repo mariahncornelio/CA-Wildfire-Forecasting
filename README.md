@@ -119,8 +119,14 @@ Overall, incorporating a time-windowed approach significantly improved the model
 
 ### Future Work
 
-* What would be the next thing that you would try.
-* What are some other studies that can be done starting from here.
+* **Incorporate Windowed Inputs into Tree-Based Models**
+  * Explore how Random Forest and XGBoost perform when fed sliding window sequences similar to those used in deep learning models. This may improve their ability to capture temporal trends
+* **Feature Engineering & Expansion**
+  * Experiment with creating additional features or reintroducing previously dropped ones to better capture environmental dynamics that lead to fire events
+* **Build an Interactive Forecasting Dashboard**
+  * Develop a user-friendly dashboard based on the current prototype that accepts 21 days of recent environmental inputs and outputs a prediction: “Based on the data of the past 3 weeks, there is a __% chance there might be a fire on or around this day. Stay cautious!”
+* **Integrate into Early Warning or Emergency Systems**
+  * Expand this tool's application into real-time systems for supporting fire preparedness, emergency response, or public safety alerts.
 
 ## HOW TO REPRODUCE RESULTS
 
