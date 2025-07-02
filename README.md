@@ -126,17 +126,11 @@ Overall, incorporating a time-windowed approach significantly improved the model
 * **Build an Interactive Forecasting Dashboard**
   * Develop a user-friendly dashboard based on the current prototype that accepts 21 days of recent environmental inputs and outputs a prediction: “Based on the data of the past 3 weeks, there is a __% chance there might be a fire on or around this day. Stay cautious!”
 * **Integrate into Early Warning or Emergency Systems**
-  * Expand this tool's application into real-time systems for supporting fire preparedness, emergency response, or public safety alerts.
+  * Expand this tool's application into real-time systems for supporting fire preparedness, emergency response, or public safety alerts
 
 ## HOW TO REPRODUCE RESULTS
 
-* In this section, provide instructions at least one of the following:
-   * Reproduce your results fully, including training.
-   * Apply this package to other data. For example, how to use the model you trained.
-   * Use this package to perform their own study.
-* Also describe what resources to use for this package, if appropirate. For example, point them to Collab and TPUs.
-
-### Overview of files in repository
+### Overview of Files in Repository
 
 * Describe the directory structure, if any.
 * List all relavent files and describe their role in the package.
