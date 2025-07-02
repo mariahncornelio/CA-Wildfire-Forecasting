@@ -6,10 +6,10 @@
 
 ## OVERVIEW
 
-  * **Background:** Wildfires in California pose a growing threat to both human life and the environment, often driven by complex interactions of weather patterns, seasonal changes, and past fire occurrences.
-  * **Project Goal:** The goal of this project is to build a forecasting tool based on a machine learning system that can predict the likelihood of a wildfire starting on a given day, using the prior 21 days of meteorological data and other time-dependent features.
-  * **Approach:** This task is a supervised binary classification task and is evaluated using several deep learning time series models (GRU, BiLSTM, Stacked LSTM, CNN+LSTM, Transformer). Our approach emphasizes recall to minimize missed fire predictions, and we use threshold tuning and ROC-AUC/F1 evaluation to select the best model for deployment in a forecasting tool.
-  * **Summary of Performance** The best model, CNN+LSTM, achieved a recall of 0.85 and an F1-score of 0.67 on the test set, with an ROC-AUC of 0.79, effectively identifying potential wildfire days while balancing false alarms.
+  * **Background:** Wildfires in California pose a growing threat to both human life and the environment, often driven by complex interactions of weather patterns, seasonal changes, and past fire occurrences
+  * **Project Goal:** The goal of this project is to build a forecasting tool based on a machine learning system that can predict the likelihood of a wildfire starting on a given day, using the prior 21 days of meteorological data and other time-dependent features
+  * **Approach:** This task is a supervised binary classification task and is evaluated using several deep learning time series models (GRU, BiLSTM, Stacked LSTM, CNN+LSTM, Transformer). The approach emphasizes recall to minimize missed fire predictions, and threshold tuning and ROC-AUC/F1 evaluation was used to select the best model for deployment in a forecasting tool
+  * **Summary of Performance** The best model, CNN+LSTM, achieved a recall of 0.85 and an F1-score of 0.67 on the test set, with an ROC-AUC of 0.79, effectively identifying potential wildfire days while balancing false alarms
 
 ## SUMMARY OF WORK DONE
 
@@ -65,7 +65,7 @@ The plot above shows feature trends during the 21 days leading up to a fire even
 * **Models Used:**
   * **LSTM:** Designed to handle sequential data, making it a natural fit for time series prediction
   * **GRU:** Faster alternative to LSTM, yields comparable performance with fewer parameters
-  * **Bidirectional LSTM:** Allows the model to access both past and future context, improving sequence understanding. Learned that it's not the best for our data as there are no future sequences
+  * **Bidirectional LSTM:** Allows the model to access both past and future context, improving sequence understanding. Learned that it's not the best for the data as there are no future sequences
   * **Stacked LSTM:** Multiple LSTM layers stacked to learn more abstract temporal patterns
   * **CNN + LSTM:** Combines convolution neural networks for local pattern extraction (days) and LSTM for temporal modeling
   * **Transformer:** Capable of capturing long-range dependencies and parallelizing training efficiently
@@ -93,7 +93,7 @@ Each model took **between 10 seconds to 1 minute to train** with Transformer tak
 
 ### Performance Comparison
 
-The primary goal of this project is to accurately detect wildfire start days, where failing to identify a true fire (false negative) can have dangerous, even deadly consequences. For this reason, we prioritized ***Recall & ROC-AUC > F1 > Precision***:
+The primary goal of this project is to accurately detect wildfire start days, where failing to identify a true fire (false negative) can have dangerous, even deadly consequences. For this reason, I prioritized ***Recall & ROC-AUC > F1 > Precision***:
 * **Recall:** Catching as many actual fire events as possible is crucial to minimize missed alarms
 * **F1:** Balances recall and precision, helping prevent over-alerting while still catching fires
 * **Precision:** Excessive false positives can damage trust in the system and strain emergency resources
@@ -107,7 +107,7 @@ While the GRU and Transformer models showed slightly better ROC-AUC and F1 score
 
 ### Conclusions
 
-After selecting ***CNN + LSTM*** as the final model, we developed a wildfire forecasting prototype that evaluates ***random 21-day sequences***. For each sampled window, it predicts the likelihood of a fire on the 22nd day. The output includes the starting index of the window, the day being predicted, the model’s fire probability score, the predicted class (fire or no fire), the actual label from the dataset, and whether the prediction was correct (1) or incorrect (0). Below are random instances to showcase the model's performance:
+After selecting ***CNN + LSTM*** as the final model, I developed a wildfire forecasting prototype that evaluates ***random 21-day sequences***. For each sampled window, it predicts the likelihood of a fire on the 22nd day. The output includes the starting index of the window, the day being predicted, the model’s fire probability score, the predicted class (fire or no fire), the actual label from the dataset, and whether the prediction was correct (1) or incorrect (0). Below are random instances to showcase the model's performance:
 
 <img width="371" alt="Screenshot 2025-07-02 at 12 37 56 AM" src="https://github.com/user-attachments/assets/85a289d6-b540-412f-8554-13871c536a05" />
 
@@ -138,7 +138,7 @@ The list below follows the chronological order in which each component of the pr
 * **Tabular Project Proposal MNC.pdf:** PDF version of the Tabualr Project Proposal MNC.pptx powerpoint
 * **CA_Weather_Fire_Dataset_1984-2025.csv:** Original data set downloaded from Zenodo
 * **ProjectRoughDraft.ipynb:** My notebook before officially working on this project's feasibility and prototype. This was to help me understand my data through varioius in-depth visualizations and to play around with different models and come up with a plan to approach this problem
-* **Feasibility_Tabular_MNC.ipynb:** This notebook includes EDA, visualization, and data pre-processing before running our models
+* **Feasibility_Tabular_MNC.ipynb:** This notebook includes EDA, visualization, and data pre-processing before running the models
 * **firedf_cleaned.csv:** Output data frame after going through Feasibility_Tabular_MNC.ipynb pipeline 
 * **Prototype_Tabular_MNC.ipynb:** Using firedf_cleaned.csv, this notebook trains the chosen models, chooses the best time series model, and includes the built wildfire forecasting tool prototype at the very end
 
