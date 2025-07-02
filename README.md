@@ -20,7 +20,8 @@
     * Output: Binary flag indicating wildfire ignition on a given day (FIRE_START_DAY)
   * **Size:**
     * 14,988 rows of daily records from 1984-2025, 14 features
-  * **Instances:** After creating 21-day window, 10476 training samples, 2245 validation, and 2246 test samples. 70-15-15 split, respectively
+  * **Instances:**
+    * After creating 21-day window, 10476 training samples, 2245 validation, and 2246 test samples. 70-15-15 split, respectively
 
 #### Preprocessing / Clean up
 
