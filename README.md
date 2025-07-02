@@ -9,7 +9,7 @@
   * **Background:** Wildfires in California pose a growing threat to both human life and the environment, often driven by complex interactions of weather patterns, seasonal changes, and past fire occurrences.
   * **Project Goal:** The goal of this project is to build a forecasting tool based on a machine learning system that can predict the likelihood of a wildfire starting on a given day, using the prior 21 days of meteorological data and other time-dependent features.
   * **Approach:** This task is a supervised binary classification task and is evaluated using several deep learning time series models (GRU, BiLSTM, Stacked LSTM, CNN+LSTM, Transformer). Our approach emphasizes recall to minimize missed fire predictions, and we use threshold tuning and ROC-AUC/F1 evaluation to select the best model for deployment in a forecasting tool.
-  * **Summary of Performance** The best model, CNN+LSTM, achieved a recall of 0.84 and an F1-score of 0.67 on the test set, with an ROC-AUC of 0.79, effectively identifying potential wildfire days while balancing false alarms.
+  * **Summary of Performance** The best model, CNN+LSTM, achieved a recall of 0.85 and an F1-score of 0.67 on the test set, with an ROC-AUC of 0.79, effectively identifying potential wildfire days while balancing false alarms.
 
 ## SUMMARY OF WORK DONE
 
