@@ -203,4 +203,14 @@ This project was developed and executed entirely in Jupyter Notebook. If you don
 
 ## CITATIONS
 
-* Provide any references.
+[1] Abatzoglou, J. T., & Williams, A. P. (2018). Impact of anthropogenic climate change on wildfire across western US forests. *PNAS.*
+
+[2] Cal Fire. “Incidents.” *CAL FIRE*, California Department of Forestry and Fire Protection, https://www.fire.ca.gov/incidents/. Accessed 28 June 2025.
+
+[3] Keith, Michael. “Exploring the LSTM Neural Network Model for Time Series.” *Towards Data Science*, 13 Jan. 2023, https://towardsdatascience.com/exploring-the-lstm-neural-network-model-for-time-series-8b7685aa8cf/.
+
+[4] Moore, Andrew. “Explainer: How Wildfires Start and Spread.” *College of Natural Resources News*, 3 Dec. 2021, https://cnr.ncsu.edu/news/2021/12/explainer-how-wildfires-start-and-spread/.
+
+[5] Yavas, C. E., et al. California Weather and Fire Prediction Dataset (1984–2025) with Engineered Features. *Zenodo*, 21 Jan. 2025, doi:10.5281/zenodo.14712845. 
+
+[6] Yuan, X., & Wu, X. (2022). Machine learning-based wildfire risk mapping in California using remote sensing. *ISPRS Journal of Photogrammetry and Remote Sensing.*
