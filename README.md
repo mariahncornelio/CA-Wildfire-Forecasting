@@ -107,7 +107,15 @@ While the GRU and Transformer models showed slightly better ROC-AUC and F1 score
 
 ### Conclusions
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
+After selecting ***CNN + LSTM*** as the final model, we developed a wildfire forecasting prototype that evaluates ***random 21-day sequences***. For each sampled window, it predicts the likelihood of a fire on the 22nd day. The output includes the starting index of the window, the day being predicted, the model’s fire probability score, the predicted class (fire or no fire), the actual label from the dataset, and whether the prediction was correct (1) or incorrect (0). Below are random instances to showcase the model's performance:
+
+<img width="371" alt="Screenshot 2025-07-02 at 12 37 56 AM" src="https://github.com/user-attachments/assets/85a289d6-b540-412f-8554-13871c536a05" />
+
+Of the 10 randomly selected test cases, the model correctly predicted 7 out of 10 wildfire events. These results align with the final CNN+LSTM model’s evaluation metrics: Precision = 0.56, Recall = 0.85, F1-score = 0.67, and ROC-AUC = 0.7981. ***In the few incorrect cases, the model predicted a fire when none occurred (false positives), which is reflected in the precision and F1-score. However, it successfully identified all actual fire days in the sample, reinforcing the model’s strong recall and ability to minimize missed fire events. While this comes with a tradeoff of slightly more false alarms, the model performs well in prioritizing safety, and I’m proud of its ability to support early warning systems by capturing fire risks effectively.***
+
+Tree-based models (especially XGBoost) achieved higher precision and ROC-AUC, meaning they were better at distinguishing between fire and no-fire days with fewer false positives. But they lacked the time window structure to fully leverage sequential temporal trends. ***Time series models, especially those using sliding windows like CNN + LSTM, were better at capturing short-term patterns and precursor signals, such as increasing wind speeds and shifting temperatures before a fire event.*** These models generally prioritized recall, catching more actual fires, which is ideal for early warning systems.
+
+Overall, incorporating a time-windowed approach significantly improved the model’s ability to detect wildfire trends, reinforcing the importance of temporal context in predictive modeling of environmental events.
 
 ### Future Work
 
