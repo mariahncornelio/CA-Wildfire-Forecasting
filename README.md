@@ -79,12 +79,16 @@ The plot above shows feature trends during the 21 days leading up to a fire even
 
 ### Training
 
-* Describe the training:
-  * How you trained: software and hardware.
-  * How long did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+Model training was performed in **Jupyter Notebook** on a **MacBook Pro with an Apple M1 chip and 8 GB of memory.** The following libraries and frameworks were used throughout the training process:
+* TensorFlow/Keras for building and training deep learning models (LSTM, GRU, BiLSTM, Stacked LSTM, CNN+LSTM, Transformer)
+* scikit-learn for preprocessing, metrics, and tree-based models like Random Forest
+* XGBoost for training a gradient-boosted decision tree classifier
+
+Each model took **between 10 seconds to 1 minute to train** with Transformer taking the longest. In total, model training and evaluation spanned approximately **12 hours over 3 days**, including experimentation and threshold tuning. **Early stopping** was implemented for all deep learning models, with **validation loss as the monitored metric and a patience of 3 epochs, restoring the best weights** to avoid overfitting. Example below:
+
+<img width="706" alt="Screenshot 2025-07-01 at 11 25 14 PM" src="https://github.com/user-attachments/assets/d203db20-529f-4500-9b01-f6c204394338" />
+
+**Challenges:** Some challenges I had was overfitting within the models, but that was solved by early stopping, I learned. A key mistake I made during development involved tuning thresholds on the test set instead of the validation set, introducing bias into the model. I learned my mistake the hard way when I realized my scores were suspiciously too good to be true and corrected by reverting to proper validation-based tuning.
 
 ### Performance Comparison
 
