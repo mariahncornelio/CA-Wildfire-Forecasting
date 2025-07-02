@@ -58,17 +58,30 @@ The plot above shows feature trends during the 21 days leading up to a fire even
 
 ### Problem Formulation
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
+* **Input/Output**
+  * Input: 21-day sequence of meteorological and seasonal features (such as temperature, wind, precipitation, etc.)
+  * Output: Binary label indicating whether or not a fire would start on the 22nd day
+* **Models Used:**
+  * **LSTM:** Designed to handle sequential data, making it a natural fit for time series prediction
+  * **GRU:** Faster alternative to LSTM, yields comparable performance with fewer parameters
+  * **Bidirectional LSTM:** Allows the model to access both past and future context, improving sequence understanding. Learned that it's not the best for our data as there are no future sequences
+  * **Stacked LSTM:** Multiple LSTM layers stacked to learn more abstract temporal patterns
+  * **CNN + LSTM:** Combines convolution neural networks for local pattern extraction (days) and LSTM for temporal modeling
+  * **Transformer:** Capable of capturing long-range dependencies and parallelizing training efficiently
+  * **Random Forest & XGBoost:** Included to compare/benchmark against decision tree–based models. These did not use sliding windows but provided a comparison between deep learning time series models and traditional ensemble methods
+* **Loss Function & Optimizer**
+  * All models were trained with binary crossentropy and the Adam optimizer
+  * Performance was monitored using metrics such as recall and ROC-AUC
+* **Hyperparamters & Threshold Tuning**
+  * Class weights applied to all models to handle class imbalance
+  * Early stopping implemented to all models to prevent overfitting
+  * Threshold tuning was used to prioritize recall, followed by F1-score, with optimal thresholds typically falling between 0.45 and 0.55, depending on the model
 
 ### Training
 
 * Describe the training:
   * How you trained: software and hardware.
-  * How did training take.
+  * How long did training take.
   * Training curves (loss vs epoch for test/train).
   * How did you decide to stop training.
   * Any difficulties? How did you resolve them?
